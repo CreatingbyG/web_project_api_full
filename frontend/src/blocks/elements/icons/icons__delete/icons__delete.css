@@ -1,0 +1,11 @@
+.icons__delete {
+  position: absolute;
+  bottom: 245px;
+  left: 250px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.icons__delete_hide{
+  display: none;
+}

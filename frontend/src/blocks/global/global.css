@@ -1,0 +1,5 @@
+.icons__like:hover, .icons__delete:hover, .edit-button:hover, .add-button:hover, .popup__container-btn-closed:hover{
+  color: #131212;
+  opacity: 0.5;
+  transition: 1s ease-in-out forwards;
+}

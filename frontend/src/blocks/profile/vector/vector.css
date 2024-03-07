@@ -1,0 +1,30 @@
+.vector{
+  position: relative;
+  right: 70px;
+  top: 40px;
+  opacity: 0;
+}
+
+.avatar {
+  transition: 0.3s ease;
+  opacity: 1;
+  }
+
+  .vector:hover {
+    cursor: pointer;
+    transition: 0.2s ease;
+    opacity: 0.7;
+  }
+
+  .avatar:hover{
+    transform: scale(1.1);
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+@media screen and (max-width: 640px){
+  .vector{
+    right: 105px;
+    top: 45px;
+  }
+}

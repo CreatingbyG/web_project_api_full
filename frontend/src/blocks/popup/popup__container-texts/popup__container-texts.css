@@ -1,0 +1,6 @@
+.popup__container-texts{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin: 0px 20px;
+}
