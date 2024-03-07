@@ -1,0 +1,16 @@
+.popup__container-texts-input-name:valid, .popup__container-texts-input-info:valid, .popup__container-texts-input-title:valid, .popup__container-texts-input-link:valid{
+  border-bottom: 1px solid green;
+}
+.form__input-error, .name-input-error{
+  display: none;
+}
+.form__input-error_active{
+font-weight: 400;
+display: block;
+font-size: 12px;
+line-height: 14px;
+/* color: red; */
+font-family: 'Inter';
+padding-top: 5px;
+height: 5px;
+}

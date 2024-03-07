@@ -1,0 +1,15 @@
+.register__form-button{
+    margin-top: 220px;
+    width: 358px;
+    height: 50px;
+    border-radius: 2px;
+    background: #FFF;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}

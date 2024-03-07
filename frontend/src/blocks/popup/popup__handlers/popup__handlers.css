@@ -1,0 +1,8 @@
+.popup__handlers{
+  border: none;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  margin: 0px 20px;
+  margin-bottom: 25px;
+}
