@@ -6,9 +6,13 @@ const { PORT = 3000 } = process.env;
 const mongoose = require("mongoose");
 const errorHandler = require('./middleware/errorHandler');
 const logger = require('./middleware/logger');
+const cors = require('cors');
 
 
 app.use(express.json());
+
+app.use(cors());
+app.options('*', cors());
 
 app.use("/users", userRoutes);
 app.use("/cards", cardRoutes);
