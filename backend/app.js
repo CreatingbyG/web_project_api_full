@@ -32,6 +32,12 @@ db.once("open", () => {
   console.log("Conexion exitosa a la base de datos");
 });
 
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('El servidor va a caer');
+  }, 0);
+});
+
 app.use((req, res, next) => {
   logger.info({ method: req.method, url: req.url, body: req.body });
   next();

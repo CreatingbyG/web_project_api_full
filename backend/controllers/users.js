@@ -2,7 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
-const JWT_SECRET = "unaClaveSecretaMuyCompleja12345";
+
 
 const getUsers = async (req, res, next) => {
   try {
@@ -16,7 +16,7 @@ const getUsers = async (req, res, next) => {
 const getUserById = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.userId).orFail(
-      new Error("Usario no encontrado")
+      new Error("Usuario no encontrado")
     );
     res.send(user);
   } catch (error) {
@@ -105,7 +105,7 @@ const login = async (req, res, next) => {
     }
 
     // Si la contraseña coincide, procedes a generar el token y enviar la respuesta
-    const token = jwt.sign({ _id: user._id.toString() }, JWT_SECRET, { expiresIn: '7d' });
+    const token = jwt.sign({ _id: user._id.toString() }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
     res.send({ token });
   } catch (error) {

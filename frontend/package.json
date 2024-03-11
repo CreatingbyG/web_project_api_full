@@ -1,15 +1,17 @@
 {
-  "name": "web_project_around_react",
+  "name": "web_project_around_auth",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/CreatingbyG/web_project_around_react",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.4.5",
+    "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -19,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "sudo npm run build && scp -r ./build/* kyriesanchez638@aroundallusa.mooo.com:/home/kyriesanchez638/web_project_api_full/frontend"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +42,11 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "gh-pages": "^6.0.0"
   }
 }
