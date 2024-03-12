@@ -1,12 +1,13 @@
 function errorHandler(err, req, res, next) {
-  console.error(err); // Loguea el error para el registro interno
+  const errorMap = {
+    'ValidationError': 400, // Error de validación
+    'UnauthorizedError': 401, // Error de autenticación
+    'NotFoundError': 404, // Error de recurso no encontrado
+  };
 
-  // Verifica si el error es un error de HTTP conocido
-  if (err.status) {
-    res.status(err.status).send({ message: err.message });
-  } else {
-    // Para errores no manejados, devuelve un código 500
-    res.status(500).send({ message: "Ocurrió un error inesperado." });
-  }
+  const errorCode = errorMap[err.name] || 500;
+  const errorMessage = err.message || 'Ha ocurrido un error inesperado.';
+
+  return res.status(errorCode).send({ message: errorMessage });
 }
 module.exports = errorHandler;
