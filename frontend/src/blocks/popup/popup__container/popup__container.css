@@ -10,6 +10,7 @@
   justify-content: space-around;
 }
 
+
 @media screen and (max-width: 640px) {
   .popup__container{
     width: 282px;
