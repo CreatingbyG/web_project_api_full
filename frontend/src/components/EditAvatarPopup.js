@@ -1,19 +1,43 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PopupWithForm from './PopupWithForm';
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
   const avatarRef = useRef();
+  const [avatarError, setAvatarError] = useState(''); // Estado para el mensaje de error del avatar
+
 
   useEffect(() => {
     if (!isOpen) {
       avatarRef.current.value = '';
+      setAvatarError('');
     }
   }, [isOpen]);
 
+  function isValidHttpUrl(string) {
+    let url;
+    
+    try {
+      url = new URL(string);
+    } catch (_) {
+      return false;  
+    }
+
+    return url.protocol === "http:" || url.protocol === "https:";
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+    const avatarUrl = avatarRef.current.value;
+
+    // Validación del enlace del avatar
+    if (!isValidHttpUrl(avatarUrl)) {
+      setAvatarError('El enlace ingresado no es una URL válida.');
+    } else {
+      setAvatarError(''); // Limpia el mensaje de error si el enlace pasa la validación
+    }
+
     onUpdateAvatar({
-      avatar: avatarRef.current.value,
+      avatar: avatarUrl,
     });
   }
 
@@ -35,7 +59,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
           placeholder="Enlace a la url"
           required
         />
-        <span className="form__input-error url-input-error"></span>
+         {avatarError && <span className="form__input-error avatar-url-input-error">{avatarError}</span>}
       </PopupWithForm>
   );
 }
