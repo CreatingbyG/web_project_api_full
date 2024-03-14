@@ -183,7 +183,8 @@ function App() {
       isEditProfilePopupOpen ||
       isPlacePopupOpen ||
       isConfirmPopupOpen ||
-      isEditAvatarPopupOpen
+      isEditAvatarPopupOpen ||
+      selectedCard
     ) {
       document.addEventListener("keydown", handleKeyDown);
     }
@@ -197,6 +198,7 @@ function App() {
     isPlacePopupOpen,
     isConfirmPopupOpen,
     isEditAvatarPopupOpen,
+    selectedCard
   ]); // Dependencias del efecto
 
   return (
