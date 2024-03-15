@@ -5,14 +5,17 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true,
     default: "Jacques Cousteau",
   },
   about: {
     type: String,
+    required: true,
     default: "Explorador",
   },
   avatar: {
     type: String,
+    required: true,
     default: "https://practicum-content.s3.us-west-1.amazonaws.com/resources/moved_avatar_1604080799.jpg",
   },
   email: {
